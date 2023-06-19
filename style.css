@@ -4,14 +4,169 @@ body *{
 
 body{
     margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+/* FIRST SECTION ---------------------------------------------------------- */
 
 .first-section{
     background-color: #ffcc00;
     width: 100vw;
     height: 100vh;
+    display: grid;
+    grid-template-rows: 280PX 1fr 150px;
+    grid-template-columns: 280px 1fr 50%;
+    grid-template-areas: "logo . play" 
+                          ". . play" 
+                         "info . play";
 }
 
+
+.logo-img{
+    padding: 32px;
+    width: 100%;
+    grid-area: logo;
+}
+
+.play-btn{
+    grid-area: play;
+    height: 100%;
+    max-width: 100%;
+}
+
+.play-info{
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+}
+
+.label{
+    text-transform: uppercase;
+}
+
+.artist{
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.song{
+    font-size: large;
+}
+
+@media (max-width: 768px) {
+    .first-section{
+        grid-template-columns: 100%;
+        grid-template-rows: 280px 1fr 150px;
+        grid-template-areas: "logo" "play" "info";
+    }
+
+    .play-btn{
+        padding: 32px;
+    }
+
+    .logo-img{
+        max-width: 280px;
+    }
+}
+
+
+
+/* SECOND SECTION---------------------------------------- */
+
+.second-section-{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas: 
+    "title title circle"
+      ". . p1"
+      "p2 p3 ."
+      ". p4 ."
+      ". . p5"
+     "p6 p7 .";
+    gap: 32px;
+}
+
+.day{
+    font-size: 100px;
+    margin: 0px;
+}
+.row{
+    border-bottom: 1px solid grey;
+    padding: 32px;
+}
+
+.program{
+    
+
+}
+
+.p1{
+    grid-area: program;
+
+}
+.p2{
+    grid-area: program;
+
+}
+
+.p3{
+    grid-area: program;
+
+}
+
+.p4{
+    grid-area: program;
+
+}
+
+.p5{
+    grid-area: program;
+
+}
+
+.p6{
+    grid-area: program;
+
+}
+
+
+.title{
+    grid-area: title;
+    font-size: 164px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 32px;
+}
+
+.circle{
+    background-color: black;
+    grid-area: circle;
+    height: 164px;
+    width: 164px;
+    border-radius: 82px;
+    padding: 32px;
+    margin: 32px;
+    justify-self: end;
+}
+
+
+@media (max-width: 768px) {
+    .last-section{
+        grid-template-rows: repeat(8, auto);
+        grid-template-columns: 100%;
+        grid-template-areas: "title" "p1" "p2" "p3" "p4" "p5" "p6" "p7";
+    }
+
+    .title{
+        font-size: 132px
+    }
+}
+
+
+/* LAST SECTION------------------------------------ */
 
 .last-section{
     display: grid;
